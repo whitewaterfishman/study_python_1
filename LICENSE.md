@@ -27,3 +27,31 @@ def quadratic(a,b,c):
 print quadratic(1, 0, -4)
 
 print quadratic(1, 4, 2)
+
+
+#----------------------------------
+#----------------------------------
+#设置首字母大小写
+l = ['adam','LISA','bsrT']
+
+def name(x):
+    
+    return x[0].upper() + x[1:].lower()
+
+print map(name,l)
+
+
+#--------------------------------------
+#--------------------------------------
+#使用reduce函数循环求一个数列的积
+L = [1,2,3,4,5]
+
+def prod(y,z):
+    
+    y = y*z 
+     
+    return y 
+
+print reduce(prod, L)
+
+
