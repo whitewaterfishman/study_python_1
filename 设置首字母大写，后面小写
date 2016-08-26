@@ -1,0 +1,7 @@
+l = ['adam','LISA','bsrT']
+
+def name(x):
+    
+    return x[0].upper() + x[1:].lower()
+
+print map(name,l)
