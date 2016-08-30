@@ -54,4 +54,122 @@ def prod(y,z):
 
 print reduce(prod, L)
 
+#======================================
+#--coding:utf-8 --
+#create a mew file.
+def createfile():
+    import os
+    
+    ls = os.linesep
+    
+    #get filename 
+    
+    
+    
+    
+    
+    while True:
+         
+        fname = raw_input('create your file name>')
+        #输入创建的文件名并赋值给左边变量
+         
+        #判断文件名称是否存在，档文件名存在就一直循环下去
+        if os.path.exists(fname):
+             
+            print "ERROR:'%s' already exists" % fname
+             
+             
+        else:
+             
+            break
+    
+    #get file content (text) line
+    all = []
+    
+    print "\n Enter lines ('.' by itself to quit).\n"
+    
+    #loop until user terminates input 
+    
+    while True:
+        
+        entry = raw_input('>')
+        
+        if entry == '.':
+            
+            break
+        
+        else:
+            
+            all.append(entry)
+    
+    #write  lines to file with proper line-ending
+    fobj = open(fname,'w')
+    #打开文件准备进行写操作
+    
+    fobj.writelines('%s%s' % (x,ls) for x in all)
+    #'%s%s'为每行添加行结束符，（x,ls)表示每一行及其结束符。
+    fobj.close()
+    
+    print 'DONE!'
+
+def openfile():
+    fname = raw_input('Enter filename:')
+    
+    print '\n'
+    
+    #attempt to open file reading 
+    
+    try:
+        
+        fobj = open(fname,'r')
+        
+    except IOError,e:
+        
+        print "*** file open error:",e 
+        
+    else:
+        
+        #display contents to the screen 
+        
+        for eachLine in fobj:
+            
+            print eachLine,
+            
+        fobj.close()  
+
+
+def start():
+    
+    file_choose = raw_input('make your choose>')
+    
+    if int(file_choose) == 1:
+        
+        print "create a new file"
+        
+        createfile()
+        
+    elif int(file_choose) == 2:
+        
+        print "Open a file!"
+        
+        openfile()
+        
+    else:
+        
+        print "Please enter the number 1 or 2!"
+        
+        start()
+
+
+print "What do you want to do?"
+    
+print "If you want to create a new file,please enter number:1"
+    
+print "If you want to open a file,please enter number:2"
+
+start()
+
+    
+    
+
 
